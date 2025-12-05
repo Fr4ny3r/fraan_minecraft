@@ -58,7 +58,7 @@ export default function RootLayoutClient({
       <OrbitControls enableZoom={false} autoRotateSpeed={4} />
     </Canvas> 
       <main className="relative max-w-[720px] max-h-[1080px] flex flex-col gap-4 z-100">
-        <div className='dark:bg-background/80 backdrop-blur-[0.5rem] p-8 rounded-lg'>
+        <div className='bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[0.5rem] p-8 rounded-lg'>
         <h1 className="text-3xl font-bold flex justify-between items-center w-[720px]">
           Holaa! soy Fran :D
           <Link href={`/about`} className='text-[var(--primary)]/90 text-[1rem] right-15 relative '>About <span className='font-extrabold text-4xl'>→</span></Link>
