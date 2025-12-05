@@ -90,7 +90,7 @@ export default function RootLayoutClient({
           </ul>
         </div>
         </div>
-        <div className='flex relative justify-center pt-5'>
+        <div className='relative justify-center hidden xl:flex pt-5'>
         <span className='absolute -top-0 left-10 -translate-y-1/2 font-bold'>Ultimo video de YT</span>
             <lite-youtube
               videoid="8An9BRau7M4"
