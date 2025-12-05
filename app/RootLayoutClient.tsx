@@ -76,11 +76,12 @@ export default function RootLayoutClient({
 
             {products.map((product) => (
               <li key={product.id} title='Ver Detalles' className='grid grid-cols-[auto_200px_80px_1fr_auto] hover:scale-[1.01] cursor-pointer transition items-center w-full gap-4 flex-wrap bg-[var(--secondary)] p-4 rounded-lg'>
+                <Link href={`/projects/${product.title}`} className='absolute top-0 left-0 w-full h-full z-10'></Link>
                 <span className=''>{product.id}</span>
                 <span>{product.title}</span>
                 <span>{product.type}</span>
                 <p className='relative text-ellipsis max-h-[30px] w-56 max-w-xs truncate'>{product.description}</p>
-                <a href={product.filePath} className='invert-100 dark:invert-0' download>
+                <a href={product.filePath} className='invert-100 dark:invert-0 hover:opacity-50' download>
                   <Image src={"/download.svg"} title='Descargar' alt={"random"} width={26} height={26} className='cursor-pointer'/>
                 </a>
               </li>
@@ -89,7 +90,8 @@ export default function RootLayoutClient({
           </ul>
         </div>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex relative justify-center pt-5'>
+        <span className='absolute -top-0 left-10 -translate-y-1/2 font-bold'>Ultimo video de YT</span>
             <lite-youtube
               videoid="8An9BRau7M4"
               style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}
