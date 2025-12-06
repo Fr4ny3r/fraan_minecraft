@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
-#about {
+.animFade {
   animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
   from {
-    scale: 0.8;
+    scale: 0.97;
     opacity: 0;
   }
   to {
     scale: 1;
     opacity: 1;
+
   }
 }
 
@@ -21,14 +22,10 @@
   --primary: #0070f3;
   --secondary: #efefefaa;
   --accent: #131313;
+  --blur: 7px;
  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-canvas {
-  display: hidden;
-}
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -43,6 +40,7 @@ canvas {
     --foreground: #ededed;
     --accent: #e2e8f0;
     --secondary: #1c1c1e;
+    --blur: 7px;
 
   }
 }
@@ -52,4 +50,17 @@ canvas {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --blur: 7px;
+    /*--blur: 0.5rem;*/
+  }
+  #obj3D {
+    display: block;
+  }
+  body {
+    --background: red;
+  }
 }
