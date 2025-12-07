@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.animBg {
+  animation: fadeBackground 2s ease-in-out 0s infinite;
+}
+
 .animFade {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -16,13 +20,29 @@
   }
 }
 
+@keyframes fadeBackground {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #0070f3;
   --secondary: #efefefaa;
   --accent: #131313;
-  --blur: 7px;
+    /*--blur: 0px;*/
+    --blur: 0.3rem; 
+    /*--blur: 0.5rem;*/
+
  
 }
 
@@ -40,7 +60,7 @@
     --foreground: #ededed;
     --accent: #e2e8f0;
     --secondary: #1c1c1e;
-    --blur: 7px;
+
 
   }
 }
@@ -48,19 +68,30 @@
 
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
+}
+
+body::before {
+  content: ''; /* Obligatorio para pseudo-elementos */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/end_sky.png');
+  opacity: 0.04; 
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
-    --blur: 7px;
-    /*--blur: 0.5rem;*/
+
   }
   #obj3D {
     display: block;
   }
   body {
-    --background: red;
+    
   }
 }

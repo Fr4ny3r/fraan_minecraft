@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased overflow-x-hidden justify-center items-center flex min-h-screen bg-background text-foreground`}>
+      <body className={`${montserrat.className} antialiased overflow-x-hidden justify-center items-center flex min-h-screen`}>
         {/* 2. Renderiza el Client Component y le pasas el children */}
         <RootLayoutClient>
           {children}
