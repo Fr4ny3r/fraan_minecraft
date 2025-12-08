@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased overflow-x-hidden flex justify-center items-center h-[100dvh]`}>
+      <body className={`${montserrat.className} antialiased overflow-x-hidden flex justify-center items-center`}>
         <RootLayoutClient>
           {children}
         </RootLayoutClient>

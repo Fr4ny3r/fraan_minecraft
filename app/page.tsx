@@ -39,7 +39,7 @@ export default function page() {
 
       <div className=" z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 mb-6 mt-12 md:mb-12 max-w-128">
         {/*Imagen Movil*/}
-        <div className="flex md:hidden justify-center items-center">
+        <div className="flex md:hidden relative justify-center items-center">
         <Image
           width={150}
           height={150}
@@ -48,7 +48,7 @@ export default function page() {
         />
         </div>
         {/*Imagen PC*/}
-        <div className="hidden md:flex justify-center items-center">
+        <div className="hidden md:flex relative justify-center items-center">
         <Image
           width={350}
           height={350}
