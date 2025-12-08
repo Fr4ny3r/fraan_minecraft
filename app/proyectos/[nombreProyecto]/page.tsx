@@ -3,6 +3,7 @@
 import { supabase } from '@/app/api/supabase'
 import { notFound } from 'next/navigation';
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function ProjectPage({ params }) {
     // 1. CORRECCIÓN: Desestructura el nombre que coincide con la carpeta.
@@ -14,28 +15,59 @@ export default async function ProjectPage({ params }) {
         .select("*")
         .eq('slug', `${nombreProyecto }`) 
         .single();
-        
-    console.log(nombreProyecto)
     if (!producto) {
        return notFound(); 
     }
 
     return (
-      <>
-    <Link href={`/`} className='flex z-2000 h-15 font-extrabold items-center justify-center text-[var(--primary)]/90 text-[1rem] left-0 top-0 m-8 border-2 border-[var(--accent)]/30 p-3 pr-4 rounded-md pl-2 absolute '>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative text-[var(--primary)] icon icon-tabler icons-tabler-outline icon-tabler-chevron-compact-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
-          Home
-    </Link>
-      <div className="animFade z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 max-w-128">
-            <h1>Proyecto: {producto.title}</h1>
-            <p className='mt-4'>
-                **ID:** {producto.id} | **Tipo:** {producto.type}
-            </p>
-            <p className='mt-4'>
-                Aquí va la información detallada de: **{producto.description}**
-            </p>
-        </div>   
-      </>
+      <section className="animFade contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 max-w-128 max-h-185">
+        <h1 className="relative -left-2 font-bold mb-4"><strong className="text-2xl md:text-4xl rounded-md bg-[var(--secondary)] px-3 py-2">{producto.title}</strong></h1>
+         <div className="text-lg md:text-2xl relative -left-2 font-bold pb-3 md:py-4 md:left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative">Tipo: </span>{producto.type}</div>
+        <p className="mb-7 mt-0 md:mt-4 text-justify text-sm md:text-base">
+          {producto.largeDescription}
+        </p>
+        <h2 className="text-lg md:text-2xl font-semibold mb-5">Modificaciones : <span className="rounded-md bg-[var(--secondary)] px-3 py-2">{producto.mainModify}</span></h2>
+        <ul className="mb-6 grid grid-cols-[1fr_1fr_1fr] grid-rows-auto">
+            {producto.allModify.lenght != 0 ?
+            (producto.allModify.map((p)=>(
+                    <li className="bg-[var(--secondary)] pt-2 flex flex-col gap-1 rounded-lg m-1 mb-2 items-center p-2">
+                        <div className="hidden md:flex">
+                        {Image ?
+                          <Image
+                            width={100}
+                            height={100}
+                            src={"/file.svg"}
+                            alt={`${p.name}`}
+                          />
+                        :
+                        <div className="bg-background/20 w-full h-[100px]">
+                        </div>
+                        }
+                        </div>
+                        <div className="flex md:hidden">
+                        {Image ?
+                          <Image
+                            width={100}
+                            height={100}
+                            src={"/file.svg"}
+                            alt={`${p.name}`}
+                          />
+                        :
+                        <div className="bg-background/20 w-full h-[100px]">
+                        </div>
+                        }
+                        </div>
+                        <span className="mt-2 w-full font-bold text-sm md:text-base">{p.name}</span>
+                        <span className="w-full text-xs md:text-sm">{p.char}</span>
+                    </li>
+            )))
+            :
+            (
+                <div>aas</div>
+            )}
+        </ul>
+
+      </section>
 
     );
 }

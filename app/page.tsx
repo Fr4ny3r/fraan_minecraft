@@ -36,11 +36,19 @@ export default function page() {
 
   return (
     <>
-    <Link href={`/about`} className='flex z-2000 items-center justify-center h-15 font-extrabold rounded-md text-[var(--primary)]/90 text-[1rem] left-0 top-0 m-8 border-2 border-[var(--accent)]/30 p-3 px-4 absolute '>
-      Sobre mi
-    </Link>
-      <div className=" z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 max-w-128">
-        <div className=" flex justify-center items-center">
+
+      <div className=" z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 mb-6 mt-12 md:mb-12 max-w-128">
+        {/*Imagen Movil*/}
+        <div className="flex md:hidden justify-center items-center">
+        <Image
+          width={150}
+          height={150}
+          src={"/file.svg"}
+          alt={"random"}
+        />
+        </div>
+        {/*Imagen PC*/}
+        <div className="hidden md:flex justify-center items-center">
         <Image
           width={350}
           height={350}
@@ -48,8 +56,8 @@ export default function page() {
           alt={"random"}
         />
         </div>
-        <div className="w-128 relative -left-8 h-2 my-12 bg-[var(--accent)]"></div>
-        <h1 className="text-4xl w-full relative -left-2 font-bold mb-4"><strong className="rounded-md bg-[var(--secondary)] px-3 py-2">_Fraan_</strong> Minecraft</h1>
+        <div className="w-128 hidden md:flex relative -left-8 h-2 my-12 bg-[var(--accent)]"></div>
+        <h1 className="text-2xl md:text-4xl w-full relative -left-2 font-bold mt-6 md:mt-0 md:mb-4"><strong className="rounded-md bg-[var(--secondary)] px-3 py-2">_Fraan_</strong> Minecraft</h1>
       </div>
 
     </>

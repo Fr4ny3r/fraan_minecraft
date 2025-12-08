@@ -22,13 +22,13 @@
 
 @keyframes fadeBackground {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   50% {
     opacity: 0.8;
   }
   100% {
-    opacity: 0;
+    opacity: 0.2;
   }
 }
 
@@ -39,13 +39,12 @@
   --primary: #0070f3;
   --secondary: #efefefaa;
   --accent: #131313;
-    /*--blur: 0px;*/
-    --blur: 0.3rem; 
+    --blur: 0px;
+    /*--blur: 0.3rem; */
     /*--blur: 0.5rem;*/
 
  
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -53,6 +52,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -89,9 +89,47 @@ body::before {
 
   }
   #obj3D {
-    display: block;
+    display: none;
   }
   body {
     
   }
+}
+
+
+/* Aplica esta clase a tu contenedor scrollable
+   Ej: <div class="contenedor-scroll-personalizado">...</div>
+*/
+.contenedor-scroll-personalizado {
+    overflow-y: scroll;
+    /* Para Firefox: hazla más delgada */
+    scrollbar-width: thin; 
+    /* Para Firefox: define el color del pulgar y el fondo */
+    scrollbar-color: var(--secondary) transparent; 
+}
+
+/* ---------------------------------------------------- */
+/* Reglas específicas de WebKit (Chrome, Safari, Edge)  */
+/* ---------------------------------------------------- */
+
+/* El ancho de toda la barra de desplazamiento */
+.contenedor-scroll-personalizado::-webkit-scrollbar {
+    width: 5px; /* Hazla más delgada */
+}
+
+/* El "track" o fondo de la barra */
+.contenedor-scroll-personalizado::-webkit-scrollbar-track {
+    background: transparent; /* Fondo muy claro o transparente */
+    border-radius: 10px;
+}
+
+/* El "thumb" o pulgar (la parte que se mueve) */
+.contenedor-scroll-personalizado::-webkit-scrollbar-thumb {
+    background: var(--secondary); /* Un gris sutil */
+    border-radius: 10px;
+}
+
+/* El pulgar al pasar el ratón */
+.contenedor-scroll-personalizado::-webkit-scrollbar-thumb:hover {
+   opacity: 0.5; /* Un poco más oscuro al interactuar */
 }

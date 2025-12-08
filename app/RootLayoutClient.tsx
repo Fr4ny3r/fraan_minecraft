@@ -4,6 +4,7 @@ import { supabase } from './api/supabase'
 import ProductList from './ProductList.tsx'
 import Modelo3D from './Modelo3D.tsx'
 import VideoYT from './VideoYT.tsx'
+import HeaderLink from './HeaderLink.tsx'
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -15,25 +16,35 @@ export default function RootLayoutClient({
 
 
   return (
-    <div className="relative flex flex-col xl:flex-row gap-4 min-h-screen max-w-[1980px] items-center justify-around px-10">
+    <section className="relative flex flex-col md:flex-row gap-4 max-w-[1980px] w-screen h-[100dvh]  items-center md:justify-around px-10">
+      <HeaderLink />
     <Modelo3D /> 
-      <main className="relative max-w-[680px] max-h-[1080px] flex flex-col gap-4 z-100">
-        <div className='bg-[var(--accent)]/12 transition dark:bg-background/80 backdrop-blur-[var(--blur)] p-8 rounded-lg'>
-        <h1 className="text-4xl font-bold relative -left-3 flex justify-between items-center w-full">
+      <div className="relative md:py-70 xl:py-0 overflow-hidden w-screen md:w-full md:max-w-[680px] md:max-h-[1080px] flex flex-col gap-4 z-100">
+        <div className='bg-[var(--accent)]/12 transition mt-20 md:mt-0 dark:bg-background/80 backdrop-blur-[var(--blur)] p-8 md:rounded-lg'>
+        <h1 className="text-2xl md:text-4xl font-bold relative xl:-left-3 flex justify-between items-center w-full">
           Holaa! soy Fran :D
         </h1>
-          <span className='text-white text-lg mt-4 block w-fit bg-[var(--primary)] p-2 rounded-md font-extrabold'>¡Bienvenid@! aqui comparto mi pasión por Minecraft.</span>
+          <span className='text-white text-sm md:text-lg mt-4 block w-fit bg-[var(--primary)] p-2 rounded-md font-extrabold'>¡Bienvenid@! aqui comparto mi pasión por Minecraft.</span>
           <ProductList />
         </div>
-        <div className='relative justify-center hidden xl:flex pt-12'>
-        <span className='absolute -top-0 left-10 translate-y-1/2 font-bold'>Ultimo video de YT</span>
-          <Suspense fallback={<div className="animBg dark:invert-1 bg-white/5" style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}></div>}>
+        <div className='relative justify-center items-center flex flex-col xl:pt-12'>
+        <div>
+          <div className="block xl:hidden">
+            {children}
+          </div>
+        </div>
+        <div className="relative w-full hidden md:flex flex-col justify-center items-center">
+        <span className='relative -top-3 left-0 w-full mx-3 font-bold'>Ultimo video de YT</span>
+          <Suspense fallback={<div className="animate-pulse bg-white/5 invert-100 dark:invert-0" style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}></div>}>
             <VideoYT />            
           </Suspense>
         </div>
-      </main>
-        {children}  
-    <div className='absolute invert-100 dark:invert-0 w-50 h-fit bottom-0 flex gap-4 justify-center itmes-center right-0 m-5 z-9000'>
+        </div>
+      </div>
+        <div className="hidden xl:block">
+          {children}
+        </div>  
+    <div className='absolute invert-100 dark:invert-0 w-50 h-fit bottom-0 hidden md:flex gap-4 justify-center items-center right-0 m-5 z-9000'>
         <a title='Youtube' href='https://www.youtube.com/@Fr4n007' target='_blank' rel='noopener noreferrer' className='cursor-pointer hover:scale-110 transition'>
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
         </a>
@@ -48,6 +59,6 @@ export default function RootLayoutClient({
         </a>
 
     </div>
-    </div>
+    </section>
   );
 }
