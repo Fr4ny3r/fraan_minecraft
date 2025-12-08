@@ -20,7 +20,7 @@ export default async function ProjectPage({ params }: { params: { nombreProyecto
   }
 
   return (
-    <section className="contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 max-w-128 max-h-185">
+    <section className="contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 w-full md:max-w-128 max-h-185">
       <h1 className="relative -left-2 font-bold mb-4"><strong className="text-2xl md:text-4xl rounded-md bg-[var(--secondary)] px-3 py-2">{producto.title}</strong></h1>
       <div className="text-lg md:text-2xl relative -left-2 font-bold pb-3 md:py-4 md:left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative">Tipo: </span>{producto.type}</div>
       <p className="mb-7 mt-0 md:mt-4 text-justify text-sm md:text-base">

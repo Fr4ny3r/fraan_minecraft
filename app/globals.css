@@ -42,8 +42,8 @@
   --primary: #0070f3;
   --secondary: #efefefaa;
   --accent: #131313;
-  --blur: 0px;
-  /*--blur: 0.3rem; */
+  /*--blur: 0px;*/
+  --blur: 0.3rem; 
   /*--blur: 0.5rem;*/
 
 
@@ -66,16 +66,19 @@
 
 
   }
+  body {
+    background-color: var(--background);
+    background-image: url('/bg_sky.png');
+    background-repeat: repeat;
+    color: var(--foreground);
+  }
 }
 
-
-
-body {
-  background-color: var(--background);
-  background-image: url('/bg_sky.png');
-  background-repeat: repeat;
-  color: var(--foreground);
-}
+  body {
+    background-color: var(--background);
+    background-repeat: repeat;
+    color: var(--foreground);
+  }
 
 /* body::before {
   content: '';

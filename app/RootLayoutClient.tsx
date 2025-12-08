@@ -19,15 +19,15 @@ export default function RootLayoutClient({
     <section className="relative flex flex-col md:flex-row gap-4 max-w-[1980px] w-screen xl:h-[100dvh]  items-center md:justify-around px-10">
       <HeaderLink />
       <Modelo3D />
-      <div className="relative pb-10 xl-pb-0 md:top-20 xl:top-0 xl:py-0 md:overflow-hidden w-screen md:w-full md:max-w-[680px] flex flex-col z-100">
-        <div className='bg-[var(--accent)]/12 transition mt-20 md:mt-0 dark:bg-background/80 backdrop-blur-[var(--blur)] p-8 md:rounded-lg'>
-          <h1 className="text-2xl md:text-4xl font-bold relative xl:-left-3 flex justify-between items-center w-full">
-            Holaa! soy Fran :D
+      <div className="relative pb-10 xl:pb-0 md:top-20 xl:top-0 xl:py-0 md:overflow-hidden w-screen md:w-full md:max-w-[680px] flex flex-col z-100 gap-10 md:gap-0">
+        <div className='bg-[var(--accent)]/12 transition mt-20 md:mt-0 dark:bg-background/80 backdrop-blur-[var(--blur)] p-8 md:rounded-lg flex flex-col justify-center xl:justify-start '>
+          <h1 className="text-2xl sm:text-4xl font-bold relative xl:-left-3 flex justify-center md:justify-start items-center w-full">
+            Holaa! soy <span className="ml-3 md:ml-2 rounded-lg scale-[1.03] md:scale-[1] text-2xl sm:text-5xl font-bold bg-[var(--secondary)] p-2">Fran :D</span>
           </h1>
-          <span className='text-white text-sm md:text-lg mt-4 block w-fit bg-[var(--primary)] p-2 rounded-md font-extrabold'>¡Bienvenid@! aqui comparto mi pasión por Minecraft.</span>
+          <span className='text-white text-[0.85rem] relative left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-0 sm:text-lg mt-4 block w-fit bg-[var(--primary)] p-2 rounded-md font-extrabold'>¡Bienvenid@! aqui comparto mi pasión por Minecraft.</span>
           <ProductList />
         </div>
-        <div className='relative justify-center items-center flex flex-col xl:pt-12'>
+        <div className='relative justify-center items-center gap-10 sm:gap-0 flex flex-col xl:pt-12'>
           <div>
             <div className="block xl:hidden">
               {children}

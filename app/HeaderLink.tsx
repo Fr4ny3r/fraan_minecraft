@@ -10,7 +10,7 @@ export default function HeaderLink(){
 
     const SocialRed = ()=> {
       return (
-    <div className='invert-100 bg dark:invert-0 w-50 h-fit xl:bottom-0 flex xl:hidden gap-4 justify-center items-center xl:right-0 xl:m-5 z-9000'>
+    <div className='w-50 h-fit xl:bottom-0 flex xl:hidden gap-4 justify-center items-center xl:right-0 xl:m-5 z-9000'>
         <a title='Youtube' href='https://www.youtube.com/@Fr4n007' target='_blank' rel='noopener noreferrer' className=' cursor-pointer hover:scale-110 transition'>
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
         </a>
@@ -31,7 +31,7 @@ export default function HeaderLink(){
 
     const pathname = usePathname();
     return(
-      <div className="flex fixed xl:absolute justify-between bg-[var(--primary)] xl:bg-[var(--accent)]/12 xl:dark:bg-background/80 items-center pr-4 w-screen xl:w-fit z-2000 h-15 left-0 top-0 m-0 xl:m-8 xl:border-2 xl:border-[var(--accent)]/30 p-3 xl:pr-4 xl:rounded-xl pl-2"> 
+      <div className="flex fixed text-white xl:absolute justify-between bg-[var(--primary)] xl:bg-[var(--accent)]/12 xl:dark:bg-background/80 items-center pr-4 w-screen xl:w-fit z-2000 h-15 left-0 top-0 m-0 xl:m-8 xl:border-2 xl:border-[var(--accent)]/30 p-3 xl:pr-4 xl:rounded-xl pl-2"> 
       {pathname != '/' ?
       <>
         <Link href={`/`} className='flex h-15 w-full font-extrabold items-center justify-between xl:text-[var(--primary)]/90 text-[1rem]'>

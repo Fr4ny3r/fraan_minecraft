@@ -17,7 +17,7 @@ async function ProductList() {
       <>
         {productos?.length != 0 ? (productos.map((product: Productos) => (
           <li key={product.id} title='Ver Detalles' className=''>
-            <Link href={`/proyectos/${product.slug}`} className='z-200 grid grid-cols-[3px_1fr] grid-rows-[1fr_auto] md:grid-rows-[1fr] md:grid-cols-[auto_180px_80px_1fr_auto] hover:brightness-150 hover:cursor-pointer transition items-center w-full gap-4 flex-wrap bg-[var(--secondary)] p-4'>
+            <Link href={`/proyectos/${product.slug}`} className='z-200 grid grid-cols-[3px_1fr] grid-rows-[1fr_auto] md:grid-rows-[1fr] md:grid-cols-[auto_180px_80px_1fr_auto] hover:brightness-150 hover:cursor-pointer transition items-center w-full gap-4 flex-wrap bg-[var(--secondary)] py-1 px-4 md:py-4 md:px-4'>
               <span className='flex'>{product.id}<span className="flex md:hidden">:</span></span>
               <span className='text-xl font-extrabold md:font-normal md:text-base'>{product.title}</span>
               <span className="col-start-1 md:col-start-3 flex gap-1 font-bold md:font-normal -translate-y-1/1 md:translate-y-0"><span className="font-normal flex md:hidden">tipo:</span>{product.type}</span>
