@@ -6,10 +6,12 @@ export interface Productos {
     filePath: string;
     slug: string;
     mainModify: string;
-    allModify: {
-        name: string;
-        image: string;
-        char: string;
-    }[];
+    allModify: allModify[];
     largeDescription: string;
+}
+
+export interface allModify {
+    name: string;
+    img: string;
+    char: string;
 }

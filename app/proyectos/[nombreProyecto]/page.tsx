@@ -2,6 +2,7 @@
 
 import { supabase } from '@/app/api/supabase'
 import { notFound } from 'next/navigation';
+import { allModify } from '@/app/lib/data';
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -29,14 +30,14 @@ export default async function ProjectPage({ params }: { params: { nombreProyecto
       <h2 className="text-lg md:text-2xl font-semibold mb-5">Modificaciones : <span className="rounded-md bg-[var(--secondary)] px-3 py-2">{producto.mainModify}</span></h2>
       <ul className="mb-6 grid grid-cols-[1fr_1fr_1fr] grid-rows-auto">
         {producto.allModify.lenght != 0 ?
-          (producto.allModify.map((p) => (
+          (producto.allModify.map((p : allModify) => (
             <li className="bg-[var(--secondary)] pt-2 flex flex-col gap-1 rounded-lg m-1 mb-2 items-center p-2">
               <div className="hidden md:flex">
                 {Image ?
                   <Image
                     width={100}
                     height={100}
-                    src={"/file.svg"}
+                    src={`/${p.img}`}
                     alt={`${p.name}`}
                   />
                   :
@@ -47,9 +48,9 @@ export default async function ProjectPage({ params }: { params: { nombreProyecto
               <div className="flex md:hidden">
                 {Image ?
                   <Image
-                    width={100}
-                    height={100}
-                    src={"/file.svg"}
+                    width={70}
+                    height={70}
+                    src={`/${p.img}`}
                     alt={`${p.name}`}
                   />
                   :
