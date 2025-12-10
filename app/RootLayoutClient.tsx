@@ -3,7 +3,6 @@ import { Suspense } from 'react'
 import { supabase } from './api/supabase'
 import ProductList from './ProductList'
 import Modelo3D from './Modelo3D'
-import VideoYT from './VideoYT'
 import HeaderLink from './HeaderLink'
 import Link from 'next/link';
 import Image from 'next/image';
