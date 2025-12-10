@@ -1,0 +1,30 @@
+
+
+import { MetadataRoute } from 'next'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+
+  const BASE_URL = 'https://fraan-minecraft-buyw.vercel.app';
+
+  return [
+    {
+      url: BASE_URL, // Página de inicio
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1, // La página de inicio es la más importante
+    },
+    {
+      url: `${BASE_URL}/about`, // Página "Acerca de"
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/proyectos`, // Página de proyectos
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    // Añade el resto de tus rutas estáticas y dinámicas aquí
+  ]
+}
