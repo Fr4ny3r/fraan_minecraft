@@ -2,7 +2,7 @@
 
 import { supabase } from '@/app/api/supabase'
 import { notFound } from 'next/navigation';
-import { allModify } from '@/app/lib/data';
+import { allModify, Productos } from '@/app/lib/data';
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -22,15 +22,15 @@ export default async function ProjectPage({ params }: { params: { nombreProyecto
 
   return (
     <section className="contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 w-full md:max-w-128 max-h-185">
-      <h1 className="relative -left-2 font-bold mb-4"><strong className="text-2xl md:text-4xl rounded-md bg-[var(--secondary)] px-3 py-2">{producto.title}</strong></h1>
-      <div className="text-lg md:text-2xl relative -left-2 font-bold pb-3 md:py-4 md:left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative">Tipo: </span>{producto.type}</div>
+      <h1 className="relative -left-2 font-bold mb-4"><strong className="text-2xl md:text-4xl rounded-md bg-[var(--secondary)] px-3 py-2">{producto?.title}</strong></h1>
+      <div className="text-lg md:text-2xl relative -left-2 font-bold pb-3 md:py-4 md:left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative">Tipo: </span>{producto?.type}</div>
       <p className="mb-7 mt-0 md:mt-4 text-justify text-sm md:text-base">
-        {producto.largeDescription}
+        {producto?.largeDescription}
       </p>
       <h2 className="text-lg md:text-2xl font-semibold mb-5">Modificaciones : <span className="rounded-md bg-[var(--secondary)] px-3 py-2">{producto.mainModify}</span></h2>
       <ul className="mb-6 grid grid-cols-[1fr_1fr_1fr] grid-rows-auto">
-        {producto.allModify.lenght != 0 ?
-          (producto.allModify.map((p : allModify) => (
+        {producto?.allModify.lenght != 0 ?
+          (producto?.allModify.map((p : allModify) => (
             <li className="bg-[var(--secondary)] pt-2 flex flex-col gap-1 rounded-lg m-1 mb-2 items-center p-2">
               <div className="hidden md:flex">
                 {Image ?
