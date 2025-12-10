@@ -22,6 +22,9 @@ export default async function ProjectPage({ params }: { params: { nombreProyecto
 
   return (
     <section className="contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 w-full md:max-w-128 max-h-185">
+      <a id="ancorDownload" href={`${producto.filePath}`} title='Descargar' className='absolute right-8 md:right-6 top-9 bg-[var(--accent)]/10 p-2 md:p-3 rounded-xl invert-100 z-100 dark:invert-0 hover:opacity-50 cursor-pointer' download>
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+      </a>
       <h1 className="relative -left-2 font-bold mb-4"><strong className="text-2xl md:text-4xl rounded-md bg-[var(--secondary)] px-3 py-2">{producto?.title}</strong></h1>
       <div className="text-lg md:text-2xl relative -left-2 font-bold pb-3 md:py-4 md:left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative">Tipo: </span>{producto?.type}</div>
       <p className="mb-7 mt-0 md:mt-4 text-justify text-sm md:text-base">
