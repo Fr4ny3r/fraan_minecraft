@@ -36,7 +36,7 @@ export default function RootLayoutClient({
           <div className="relative w-full hidden md:flex flex-col justify-center items-center">
             <span className='relative -top-3 left-0 w-full mx-3 font-bold'>Ultimo video de YT</span>
             <Suspense fallback={<div className="animate-pulse bg-white/5 invert-100 dark:invert-0" style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}></div>}>
-              <VideoYT />
+              {/*<VideoYT />*/}
             </Suspense>
           </div>
         </div>
