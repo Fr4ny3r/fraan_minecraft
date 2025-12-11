@@ -35,7 +35,7 @@ export default function RootLayoutClient({
           </div>
           <div className="relative w-[80%] md:w-full flex-col justify-center items-center mt-0 sm:mt-8 xl:mt-0">
             <span className='relative -top-3 left-0 w-full mx-3 font-bold'>Ultimo video de YT</span>
-            <Suspense fallback={<div className="animate-pulse bg-white/5 invert-100 dark:invert-0" style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}></div>}>
+            <Suspense fallback={<div className="animate-pulse bg-white/5 invert-100 dark:invert-0 h-30" style={{ width: '100%', borderRadius: '12px', overflow: 'hidden' }}></div>}>
               <VideoYT />
             </Suspense>
           </div>
