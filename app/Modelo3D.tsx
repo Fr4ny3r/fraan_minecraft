@@ -10,7 +10,7 @@ export default function Modelo3D() {
 
     <Canvas
       id="obj3D"
-      className="z-50 hidden xl:hidden opacity-80 -translate-1/2 xl:border-4 xl:border-[var(--accent)]/60"
+      className="z-50 hidden xl:block opacity-80 -translate-1/2 xl:border-4 xl:border-[var(--accent)]/60"
       style={{ position: "absolute", top: "50%", left: "50%", width: "100vw", height: "100vh" }}
     >
       <Stage environment={"park"} intensity={0.1} shadows={true} adjustCamera={true}>

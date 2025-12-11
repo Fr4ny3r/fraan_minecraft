@@ -43,11 +43,15 @@
   --secondary: #efefefaa;
   --accent: #131313;
   /*--blur: 0px;*/
-  --blur: 0.3rem; 
+  --blur: 0rem; 
   /*--blur: 0.5rem;*/
 
 
 }
+
+  #obj3D {
+    display: none;
+  }
 
 @theme inline {
   --color-background: var(--background);
@@ -94,7 +98,14 @@
   z-index: 1;
 }
 */
-@media (prefers-reduced-motion: no-preference) {}
+@media (prefers-reduced-motion: no-preference) {
+  :root{
+    --blur: 0.3rem;
+  }
+  #obj3D {
+    display: block;
+  }
+}
 
 
 /* Aplica esta clase a tu contenedor scrollable
