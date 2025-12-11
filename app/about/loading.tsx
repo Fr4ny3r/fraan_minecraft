@@ -5,7 +5,7 @@ export default function ProjectPage() {
 
     return (
       <>
-      <section className="animFade contenedor-scroll-personalizado overflow-x-hidden overflow-smooth overflow-y-auto z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12 128 h-185">
+      <section className="animFade contenedor-scroll-personalizado xl:overflow-x-hidden xl:overflow-smooth xl:overflow-y-auto w-full xl:max-w-128 xl:max-h-185 z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 py-12">
         <h1 className="text-1xl relative -left-2 font-bold mb-4"><strong className="animate-pulse text-4xl rounded-md bg-[var(--secondary)] px-30 py-5"></strong></h1>
          <div className="text-2xl relative -left-2 font-bold py-4 left-1 text-[var(--foreground)]"><span className="text-base text-[var(--accent)]/60 relative"> </span><span className="animate-pulse rounded-md bg-[var(--secondary)] ml-3 px-15 py-2"></span></div>
         <p className="animate-pulse bg-white/5 mb-7 mt-4 w-112 h-23 rouded-lg text-justify">
