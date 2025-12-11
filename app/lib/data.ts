@@ -1,3 +1,10 @@
+export interface Video {
+    id: number;
+    img: string;
+    src: string;
+    title: string;
+}
+
 export interface Productos {
     id: number;
     title: string;

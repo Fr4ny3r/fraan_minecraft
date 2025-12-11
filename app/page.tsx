@@ -37,7 +37,7 @@ export default function page() {
   return (
     <>
 
-      <div className=" z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 mb-6 mt-12 md:mb-12 max-w-128">
+      <div className="animFade z-1000 relative bg-[var(--accent)]/12 dark:bg-background/80 backdrop-blur-[var(--blur)] rounded-lg p-8 mb-6 mt-12 md:mb-12 max-w-128">
         {/*Imagen Movil*/}
         <div className="flex md:hidden relative justify-center items-center">
         <Image

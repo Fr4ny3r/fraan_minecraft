@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import { supabase } from './api/supabase'
 import ProductList from './ProductList'
 import Modelo3D from './Modelo3D'
+import VideoYT from './VideoYT'
 import HeaderLink from './HeaderLink'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,10 +16,10 @@ export default function RootLayoutClient({
 
 
   return (
-    <section className="relative flex flex-col md:flex-row gap-4 max-w-[1980px] w-screen xl:h-[100dvh]  items-center md:justify-around px-10">
+    <section className="relative flex flex-col md:flex-row gap-8 max-w-[1980px] w-screen xl:h-[100dvh]  items-center md:justify-center px-10">
       <HeaderLink />
       <Modelo3D />
-      <div className="relative pb-10 xl:pb-0 md:top-20 xl:top-0 xl:py-0 md:overflow-hidden w-screen md:w-full md:max-w-[680px] flex flex-col z-100 gap-10 md:gap-0">
+      <div className="relative pb-10 xl:pb-0 md:top-20 xl:top-0 xl:py-0 md:overflow-hidden w-screen md:w-full md:max-w-[680px] flex flex-col z-100 gap-10 xl:gap-0">
         <div className='bg-[var(--accent)]/12 transition mt-20 md:mt-0 dark:bg-background/80 backdrop-blur-[var(--blur)] p-8 md:rounded-lg flex flex-col justify-center xl:justify-start '>
           <h1 className="text-2xl sm:text-4xl font-bold relative xl:-left-3 flex justify-center md:justify-start items-center w-full">
             Holaa! soy <span className="ml-3 md:ml-2 rounded-lg scale-[1.03] md:scale-[1] text-2xl sm:text-5xl font-bold bg-[var(--secondary)] p-2">Fran :D</span>
@@ -32,10 +33,10 @@ export default function RootLayoutClient({
               {children}
             </div>
           </div>
-          <div className="relative w-full hidden md:flex flex-col justify-center items-center">
+          <div className="relative w-[80%] md:w-full flex-col justify-center items-center mt-0 sm:mt-8 xl:mt-0">
             <span className='relative -top-3 left-0 w-full mx-3 font-bold'>Ultimo video de YT</span>
             <Suspense fallback={<div className="animate-pulse bg-white/5 invert-100 dark:invert-0" style={{ width: '100%', maxWidth: '560px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}></div>}>
-              {/*<VideoYT />*/}
+              <VideoYT />
             </Suspense>
           </div>
         </div>
